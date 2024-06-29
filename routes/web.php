@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\AdminController;
 
+use App\Http\Controllers\StripeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +74,7 @@ Route::get('/delete/{id}', [HomeController::class, 'deletecart']);
 Route::post('/orders', [HomeController::class, 'orders']);
 
 Route::get('/redirect', [AdminController::class, 'redirect']);
+
+
+Route::get('/stripe-payment', [StripeController::class, 'show'])->name('stripe.show');
+Route::post('/stripe-payment', [StripeController::class, 'payment'])->name('stripe.payment');

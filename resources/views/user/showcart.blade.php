@@ -90,6 +90,11 @@
             <p>No products in the cart!</p>
             @endif
         </div>
+        <div style="text-align: center;">
+    <p>Total: {{ $total }} EGP</p>
+    <a href="{{ route('stripe.show') }}" class="btn btn-primary">Proceed to Payment</a>
+    <button type="submit" class="btn btn-success">Confirm Order</button>
+</div>
     </div>
     @include('user.footer');
     @include('user.js');
